@@ -1,0 +1,197 @@
+/* ==========================================================
+   0. UNIVERSAL RESET & DESIGN TOKENS
+   ========================================================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* 60% - warna dominan netral (cream lembut) */
+  --color-paper: #FBF2EF;
+  --color-surface: #FFFFFF;
+
+  /* 30% - warna teks (plum gelap hangat) */
+  --color-ink: #3A2830;
+  --color-ink-muted: #8C6E76;
+
+  /* 10% - warna aksen (soft pink / rose) */
+  --color-accent: #B25376;
+  --color-accent-dark: #7A3752;
+  --color-accent-soft: #FBE1EA;
+
+  --color-border: #F0DCE0;
+  --color-danger: #C2445E;
+
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --shadow-soft: 0 4px 16px rgba(58, 40, 48, 0.06);
+  --shadow-md: 0 10px 30px rgba(58, 40, 48, 0.08);
+
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color-tersedia: var(--color-paper);
+  color: var(--color-ink);
+  line-height: 1.6;
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+
+/* ==========================================================
+   1. HEADER & NAV
+   ========================================================== */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color-tersedia: #dad3e6;
+  tersedia : #dcfce7;teks: #854xd0e
+  dipinjam : #fef9c3; teks: #166534
+  dalam perbaikian: #FEE2E2; teks: #991B1B)
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.header-inner {
+  max-width: 1100px;
+  margin-inline: auto;
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--color-ink);
+  white-space: nowrap;
+}
+
+.logo-dot { color: var(--color-accent); }
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+
+.nav-list a {
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-ink-muted);
+  transition: color 0.2s ease;
+}
+
+.nav-list a:hover,
+.nav-list a:focus-visible {
+  color: var(--color-accent);
+}
+
+/* ==========================================================
+   2. LAYOUT — GRID (main + aside)
+   ========================================================== */
+body {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "header"
+    "main"
+    "aside"
+    "footer";
+}
+
+.site-header { grid-area: header; }
+main { grid-area: main; }
+.site-aside { grid-area: aside; }
+.site-footer { grid-area: footer; }
+
+@media (min-width: 900px) {
+  body {
+    grid-template-columns: 1fr 280px;
+    grid-template-areas:
+      "header header"
+      "main   aside"
+      "footer footer";
+    column-gap: 40px;
+  }
+
+  .site-aside {
+    padding-top: 64px;
+  }
+}
+
+.section-inner {
+  max-width: 720px;
+  margin-inline: auto;
+  padding: 64px 24px;
+}
+
+@media (min-width: 900px) {
+  .section-inner {
+    margin-inline: 40px 0;
+    padding-inline: 0;
+  }
+}
+
+/* ==========================================================
+   3. TYPOGRAPHY HELPERS
+   ========================================================== */
+.eyebrow {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: 10px;
+}
+
+h1, h2, h3, .subheading {
+  font-family: var(--font-display);
+  color: var(--color-ink);
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+h2 { font-size: clamp(24px, 3.5vw, 30px); margin-bottom: 10px; }
+
+.subheading {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 28px 0 14px;
+}
+
+.role {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-accent);
+  margin-bottom: 18px;
+}
+
+.bio, .section-desc {
+  color: var(--color-ink-muted);
+  font-size: 15.5px;
+  max-width: 60ch;
+  margin-bottom: 8px;
+}
