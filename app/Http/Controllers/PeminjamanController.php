@@ -13,6 +13,8 @@ class PeminjamanController extends Controller
             ['nama' => 'Medan → Surabaya', 'harga' => 1650000],
             ['nama' => 'Medan → Denpasar (Bali)', 'harga' => 1950000],
             ['nama' => 'Medan → Kuala Lumpur', 'harga' => 850000],
+
+            
         ];
     }
 
