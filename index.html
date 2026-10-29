@@ -140,7 +140,7 @@
       </div>
     </section>
 
-    <!-- ===================== SECTION 3: FORMULIR LAYANAN ===================== -->
+    <!-- ===================== SECTION 3: FORMULIR PENGAJUAN PEMINJAMAN ===================== -->
     <section id="layanan" aria-labelledby="layanan-heading" class="section">
       <div class="section-inner">
         <p class="eyebrow">Hubungi Saya</p>
@@ -166,10 +166,9 @@
             </div>
 
             <div class="form-group">
-              <label for="telepon">Nomor Telepon / WhatsApp</label>
-              <input type="tel" id="telepon" name="telepon" placeholder="08xxxxxxxxxx"
+              <label for="id">Status <dipinjam>/<dalam_perbaikan> </dipinjam>/ </label>
+              <input type="tel" id="status" name="dipinjam/dalam_perbaikan" placeholder="08xxxxxxxxxx"
                      pattern="[0-9]{10,15}" aria-describedby="telepon-help">
-              <small id="telepon-help" class="form-help">Opsional, format angka saja.</small>
             </div>
           </fieldset>
 
@@ -192,7 +191,8 @@
             </div>
 
             <div class="form-group">
-              <label for="topik">Topik Konsultasi</label>
+              <label for="topik">Tambah Aset Baru</label>
+               enctype="multipart/form-data"
               <select id="topik" name="topik">
                 <option value="prototype">Pembuatan Prototipe</option>
                 <option value="riset">Riset Pengguna</option>
@@ -227,16 +227,16 @@
 
   </main>
 
-  <aside aria-label="Informasi Tambahan" class="site-aside">
+  <aside aria-label="Pengajuan PEMINJAMAN" class="site-aside">
     <div class="aside-inner">
       <h2 class="aside-heading">Info Cepat</h2>
       <dl class="quick-facts">
-        <dt>Program Studi</dt>
-        <dd>S1 Sistem Informasi (Semester 5)</dd>
-        <dt>Kampus</dt>
-        <dd>Institut Teknologi Del</dd>
-        <dt>Organisasi</dt>
-        <dd>MPH HIMSI</dd>
+        <dt>equipment_id</dt>
+        <dd>borrower_name</dd>
+        <dt>borrower_nim</dt>
+        <dd>borrower_email</dd>
+        <dt>loan_date</dt>
+        <dd>expected_return_date</dd>
         <dt>Fokus</dt>
         <dd>UI/UX Design, Flutter, Data Analysis</dd>
       </dl>
@@ -247,9 +247,9 @@
     <div class="footer-inner">
       <p>&copy; 2026 Theresia Oktaviani Samosir. Dibuat untuk tugas mandiri PPW — Institut Teknologi Del.</p>
       <nav aria-label="Navigasi footer">
-        <a href="#tentang">Tentang Saya</a>
-        <a href="#portofolio">Portofolio Karya</a>
-        <a href="#layanan">Formulir Layanan</a>
+        <a href="#beranda">Sistem Peminjaman Alat</a>
+        <a href="#layanan">Formulir Tambah Aset Baru </a>
+        <a href="#layanan">Formulir Pengajuan Peminjaman</a>
       </nav>
     </div>
   </footer>
