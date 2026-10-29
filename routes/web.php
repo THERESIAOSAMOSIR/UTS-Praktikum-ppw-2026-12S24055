@@ -6,12 +6,13 @@ use App\Http\Controllers\BukuController;
 use App\Http\Controllers\SirkulasiController;
 
 Route::middleware('guest')->group(function () {
-    Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
-    Route::post('/login', [AuthController::class, 'login'])->name('login.post');
+    Route::get('/equipments', [AuthController::class, 'showLogin'])->name('login');
+    Route::get('/equipments/{id}', [AuthController::class, 'showLogin'])->name('login');
+    Route::post('/loans', [AuthController::class, 'login'])->name('login.post');
 });
 
 Route::middleware('auth')->group(function () {
-    Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+    Route::post('/loans/create', [AuthController::class, 'logout'])->name('logout');
 
     Route::get('/', [BukuController::class, 'index'])->name('bukus.index');
 
