@@ -1,5 +1,5 @@
 <script>
-    // 1. Data Awal Buku (Master Data)
+    // 1. Data Awal Barang (Master Data)
     const initialBooks = [
       { id: 1, title: "IOT", >enum('status', ['diajukan', 'disetujui', 'ditolak', 'selesai',default:'diajukan'])->default('dipinjam')};
       { id: 2, title: "SRV", >enum('status', ['diajukan', 'disetujui', 'ditolak', 'selesai',default:'diajukan'])->default('dipinjam')};
